@@ -1,6 +1,6 @@
 #!/bin/bash
-LATEST_VER=$(curl -s https://api.github.com/repos/perfect-panel/ppanel-web/releases/latest | jq -r '.tag_name')
-SERVER_URL="https://github.com/perfect-panel/ppanel-web/releases/download/${LATEST_VER}/ppanel-user-web.tar.gz"
+# 下载用户端
+log_info "下载用户端..."
 mkdir -p /opt/ppanel
-wget -O /opt/ppanel-user-web.tar.gz $SERVER_URL
+wget -O /opt/ppanel-user-web.tar.gz https://github.com/perfect-panel/ppanel-web/releases/download/v1.0.0-beta.6/ppanel-user-web.tar.gz
 tar -xvf /opt/ppanel-user-web.tar.gz -C /opt/ppanel/
